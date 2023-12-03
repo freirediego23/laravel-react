@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -26,4 +28,9 @@ Route::group(['middleware'=>'api'],function(){
     Route::post('logout', [AuthController::class,'logout']);
     Route::post('refresh', [AuthController::class,'refresh']);
     Route::post('me', [AuthController::class,'me']);
+
+    Route::get('/user', [UserController::class,'index']);
+    Route::put('/user/{id}', [UserController::class,'update']);
+    Route::delete('/user/{id}', [UserController::class,'destroy']);
+    
 });
