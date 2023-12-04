@@ -1,5 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
-import Home from "../components/home";
+//import Home from "../components/home";
 import Login from "../components/login";
 import Register from "../components/register";
 
@@ -8,14 +8,9 @@ function Guest() {
     <>
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
         <ul className="navbar-nav">
-          <li className="nav-item">
+          <li className="nav-item ml-6">
             <Link className="nav-link" to="/">
               Home
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/login">
-              Login
             </Link>
           </li>
           <li className="nav-item">
@@ -27,7 +22,7 @@ function Guest() {
       </nav>
       <div className="container">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>

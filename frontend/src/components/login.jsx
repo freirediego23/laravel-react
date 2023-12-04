@@ -14,15 +14,15 @@ export default function Login() {
         setToken(res.data.user, res.data.access_token);
       })
       .catch((error) => {
-        console.log(error.response.data); // Log the response data for more details
+        console.log(error.response.data);
       });
   };
 
   return (
-    <div className="row justify-content-center pt-5">
+    <div className="row justify-content-center pt-5 ">
       <div className="col-sm-6">
         <div className="card p-4">
-          <h1 className="text-center mb-3">Login </h1>
+          <h1 className="text-center mb-3">Admin Login </h1>
           <div className="form-group">
             <label>Email address:</label>
             <input
