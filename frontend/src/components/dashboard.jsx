@@ -31,7 +31,7 @@ export default function Dashboard() {
     });
   };
 
-  // Funciones para abrir y cerrar el modal
+  // Funciones para abrir y cerrar el modal.
   const handlOpenModal = () => {
     setModalOpen(true);
   };
