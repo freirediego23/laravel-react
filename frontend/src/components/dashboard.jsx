@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import AuthUser from "./AuthUser";
 import axios from "axios";
 import Modal from "./Modal";
+import AddModal from "./AddModal";
 
 export default function Dashboard() {
   const { http } = AuthUser();
@@ -10,6 +11,7 @@ export default function Dashboard() {
   const [users, setUsers] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [open, setOpen] = useState(false);
+
   const [editUsers, setEditUsers] = useState({
     id: null,
     name: "",
@@ -102,7 +104,6 @@ export default function Dashboard() {
       await axios.delete(`http://127.0.0.1:8000/api/user/${id}`);
       // Actualizar la lista de estudiantes después de la eliminación
       fetchUsers();
-      //history.push("/dashboard");
     } catch (error) {
       console.error("Error deleting student:", error);
     }
@@ -114,16 +115,17 @@ export default function Dashboard() {
         <>
           <div>
             <h4>Welcome</h4>
-            <p>{userdetail.name}</p>
-            {/* <h4>Email</h4>
-            <p>{userdetail.email}</p> */}
+            <p className="text-lg">{userdetail.name}</p>
           </div>
+          <AddModal></AddModal>
+          <br />
           <input
             className="mb-3 mt-4"
             type="text"
             placeholder="Search users..."
             onChange={(e) => setSearchTerm(e.target.value)}
           />
+
           <div>
             <h2>List of users</h2>
           </div>

@@ -41,8 +41,6 @@ function Auth() {
           <Route path="/register" element={<Register />} />
         </Routes>
       </div>
-
-      {/* {(token = undefined ? <p>no def</p> : <p>si def</p>)} */}
     </>
   );
 }

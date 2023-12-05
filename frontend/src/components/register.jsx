@@ -15,7 +15,8 @@ export default function Register() {
       .post("/register", { email: email, password: password, name: name })
       .then((res) => {
         // Changed /login to /dashboard to direct to the dashboard instead of login view after creating a new user.
-        navigate("/dashboard");
+
+        navigate("/");
       });
   };
 
